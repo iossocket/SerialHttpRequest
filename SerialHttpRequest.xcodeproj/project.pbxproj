@@ -12,6 +12,8 @@
 		D049B6481D1AC9E600BF51AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D049B6461D1AC9E600BF51AA /* Main.storyboard */; };
 		D049B64A1D1AC9E600BF51AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D049B6491D1AC9E600BF51AA /* Assets.xcassets */; };
 		D049B64D1D1AC9E600BF51AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D049B64B1D1AC9E600BF51AA /* LaunchScreen.storyboard */; };
+		D049B6561D1ACC8300BF51AA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6551D1ACC8300BF51AA /* APIManager.swift */; };
+		D049B6581D1ACCA200BF51AA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6571D1ACCA200BF51AA /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D049B6491D1AC9E600BF51AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D049B64C1D1AC9E600BF51AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D049B64E1D1AC9E600BF51AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D049B6551D1ACC8300BF51AA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D049B6571D1ACCA200BF51AA /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		D049B6361D1AC9E600BF51AA = {
 			isa = PBXGroup;
 			children = (
+				D049B6541D1ACC5B00BF51AA /* APIManager */,
 				D049B6411D1AC9E600BF51AA /* SerialHttpRequest */,
 				D049B6401D1AC9E600BF51AA /* Products */,
 			);
@@ -62,6 +67,15 @@
 				D049B64E1D1AC9E600BF51AA /* Info.plist */,
 			);
 			path = SerialHttpRequest;
+			sourceTree = "<group>";
+		};
+		D049B6541D1ACC5B00BF51AA /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D049B6551D1ACC8300BF51AA /* APIManager.swift */,
+				D049B6571D1ACCA200BF51AA /* Queue.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D049B6561D1ACC8300BF51AA /* APIManager.swift in Sources */,
 				D049B6451D1AC9E600BF51AA /* ViewController.swift in Sources */,
 				D049B6431D1AC9E600BF51AA /* AppDelegate.swift in Sources */,
+				D049B6581D1ACCA200BF51AA /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

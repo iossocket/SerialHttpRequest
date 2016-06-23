@@ -10,16 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let manager = APIManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+            print(resp)
+        }
+        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+            print(resp)
+        }
+        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+            print(resp)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
