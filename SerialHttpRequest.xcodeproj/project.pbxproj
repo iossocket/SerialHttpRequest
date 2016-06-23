@@ -14,6 +14,8 @@
 		D049B64D1D1AC9E600BF51AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D049B64B1D1AC9E600BF51AA /* LaunchScreen.storyboard */; };
 		D049B6561D1ACC8300BF51AA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6551D1ACC8300BF51AA /* APIManager.swift */; };
 		D049B6581D1ACCA200BF51AA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6571D1ACCA200BF51AA /* Queue.swift */; };
+		D049B65A1D1B6AFF00BF51AA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6591D1B6AFF00BF51AA /* Request.swift */; };
+		D049B65C1D1B820600BF51AA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B65B1D1B820600BF51AA /* ParameterEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D049B64E1D1AC9E600BF51AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D049B6551D1ACC8300BF51AA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D049B6571D1ACCA200BF51AA /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		D049B6591D1B6AFF00BF51AA /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D049B65B1D1B820600BF51AA /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			children = (
 				D049B6551D1ACC8300BF51AA /* APIManager.swift */,
 				D049B6571D1ACCA200BF51AA /* Queue.swift */,
+				D049B6591D1B6AFF00BF51AA /* Request.swift */,
+				D049B65B1D1B820600BF51AA /* ParameterEncoding.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -149,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D049B65C1D1B820600BF51AA /* ParameterEncoding.swift in Sources */,
 				D049B6561D1ACC8300BF51AA /* APIManager.swift in Sources */,
 				D049B6451D1AC9E600BF51AA /* ViewController.swift in Sources */,
+				D049B65A1D1B6AFF00BF51AA /* Request.swift in Sources */,
 				D049B6431D1AC9E600BF51AA /* AppDelegate.swift in Sources */,
 				D049B6581D1ACCA200BF51AA /* Queue.swift in Sources */,
 			);
@@ -302,6 +310,7 @@
 				D049B6531D1AC9E600BF51AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
