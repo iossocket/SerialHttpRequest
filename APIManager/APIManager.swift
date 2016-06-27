@@ -27,8 +27,13 @@ class APIManager {
         session.finishTasksAndInvalidate()
     }
     
-    func addTask(url: String, response: (data: NSData?, resp: NSURLResponse?, error: NSError?) -> Void) {
-        let task = session.dataTaskWithURL(NSURL(string: url)!) {[weak self] (data, resp, error) in
+    func addTask(url: String, method: Method, parameters: [String: AnyObject], encoding: ParameterEncoding = .URL, header: [String: String]? = nil, response: (data: NSData?, resp: NSURLResponse?, error: NSError?) -> Void) {
+        let req = request(url, method: method, parameters: parameters, encoding: encoding, headers: header)
+        guard let request = req else {
+            response(data: nil, resp: nil, error: NSError(domain: "request create error", code: 422, userInfo: nil))
+            return
+        }
+        let task = session.dataTaskWithRequest(request) {[weak self] (data, resp, error) in
             response(data: data, resp: resp, error: error)
             self?.resumeTasks()
         }

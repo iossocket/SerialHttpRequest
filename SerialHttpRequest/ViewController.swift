@@ -13,13 +13,16 @@ class ViewController: UIViewController {
     let manager = APIManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+        manager.addTask("https://www.baidu.com", method: .GET, parameters: [:], encoding: .URL) { (data, resp, error) in
             print(resp)
         }
-        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+        manager.addTask("https://www.baidu.com", method: .GET, parameters: [:], encoding: .URL) { (data, resp, error) in
             print(resp)
         }
-        manager.addTask("https://www.baidu.com") { (data, resp, error) in
+        manager.addTask("https://www.baidu.com", method: .GET, parameters: [:], encoding: .URL) { (data, resp, error) in
+            print(resp)
+        }
+        manager.addTask("https://www.baidu.com", method: .GET, parameters: [:], encoding: .URL) { (data, resp, error) in
             print(resp)
         }
     }
