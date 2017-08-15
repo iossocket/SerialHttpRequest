@@ -16,7 +16,18 @@
 		D049B6581D1ACCA200BF51AA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6571D1ACCA200BF51AA /* Queue.swift */; };
 		D049B65A1D1B6AFF00BF51AA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B6591D1B6AFF00BF51AA /* Request.swift */; };
 		D049B65C1D1B820600BF51AA /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049B65B1D1B820600BF51AA /* ParameterEncoding.swift */; };
+		D0DD295A1F42FC380078100A /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DD29591F42FC380078100A /* QueueTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0DD29541F42FC020078100A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D049B6371D1AC9E600BF51AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D049B63E1D1AC9E600BF51AA;
+			remoteInfo = SerialHttpRequest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D049B63F1D1AC9E600BF51AA /* SerialHttpRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerialHttpRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +41,20 @@
 		D049B6571D1ACCA200BF51AA /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		D049B6591D1B6AFF00BF51AA /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D049B65B1D1B820600BF51AA /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		D0DD294F1F42FC020078100A /* SerialHttpRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SerialHttpRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0DD29531F42FC020078100A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0DD29591F42FC380078100A /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D049B63C1D1AC9E600BF51AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0DD294C1F42FC020078100A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,6 +69,7 @@
 			children = (
 				D049B6541D1ACC5B00BF51AA /* APIManager */,
 				D049B6411D1AC9E600BF51AA /* SerialHttpRequest */,
+				D0DD29501F42FC020078100A /* SerialHttpRequestTests */,
 				D049B6401D1AC9E600BF51AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D049B63F1D1AC9E600BF51AA /* SerialHttpRequest.app */,
+				D0DD294F1F42FC020078100A /* SerialHttpRequestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +107,15 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		D0DD29501F42FC020078100A /* SerialHttpRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0DD29591F42FC380078100A /* QueueTests.swift */,
+				D0DD29531F42FC020078100A /* Info.plist */,
+			);
+			path = SerialHttpRequestTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,19 +136,42 @@
 			productReference = D049B63F1D1AC9E600BF51AA /* SerialHttpRequest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D0DD294E1F42FC020078100A /* SerialHttpRequestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0DD29581F42FC020078100A /* Build configuration list for PBXNativeTarget "SerialHttpRequestTests" */;
+			buildPhases = (
+				D0DD294B1F42FC020078100A /* Sources */,
+				D0DD294C1F42FC020078100A /* Frameworks */,
+				D0DD294D1F42FC020078100A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0DD29551F42FC020078100A /* PBXTargetDependency */,
+			);
+			name = SerialHttpRequestTests;
+			productName = SerialHttpRequestTests;
+			productReference = D0DD294F1F42FC020078100A /* SerialHttpRequestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D049B6371D1AC9E600BF51AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = kotlinchina;
 				TargetAttributes = {
 					D049B63E1D1AC9E600BF51AA = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0830;
+					};
+					D0DD294E1F42FC020078100A = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D049B63E1D1AC9E600BF51AA;
 					};
 				};
 			};
@@ -134,6 +189,7 @@
 			projectRoot = "";
 			targets = (
 				D049B63E1D1AC9E600BF51AA /* SerialHttpRequest */,
+				D0DD294E1F42FC020078100A /* SerialHttpRequestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +202,13 @@
 				D049B64D1D1AC9E600BF51AA /* LaunchScreen.storyboard in Resources */,
 				D049B64A1D1AC9E600BF51AA /* Assets.xcassets in Resources */,
 				D049B6481D1AC9E600BF51AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0DD294D1F42FC020078100A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +228,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0DD294B1F42FC020078100A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0DD295A1F42FC380078100A /* QueueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0DD29551F42FC020078100A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D049B63E1D1AC9E600BF51AA /* SerialHttpRequest */;
+			targetProxy = D0DD29541F42FC020078100A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D049B6461D1AC9E600BF51AA /* Main.storyboard */ = {
@@ -299,6 +378,39 @@
 			};
 			name = Release;
 		};
+		D0DD29561F42FC020078100A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = SerialHttpRequestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.SerialHttpRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SerialHttpRequest.app/SerialHttpRequest";
+			};
+			name = Debug;
+		};
+		D0DD29571F42FC020078100A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = SerialHttpRequestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.SerialHttpRequestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SerialHttpRequest.app/SerialHttpRequest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +431,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D0DD29581F42FC020078100A /* Build configuration list for PBXNativeTarget "SerialHttpRequestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0DD29561F42FC020078100A /* Debug */,
+				D0DD29571F42FC020078100A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
