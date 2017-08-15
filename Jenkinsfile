@@ -3,7 +3,7 @@ node {
        checkout scm
     }
 
-    stage('Build') {
-        sh "pwd"
+    stage('Test') {
+        sh "fastlane test"
     }
 }
