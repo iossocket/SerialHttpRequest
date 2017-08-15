@@ -12,26 +12,26 @@ enum Method: String {
     case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
 }
 
-func request(url: String, method: Method, parameters: [String: AnyObject]? = nil,
-             encoding: ParameterEncoding = .URL, headers: [String: String]? = nil) -> NSMutableURLRequest? {
+func request(_ url: String, method: Method, parameters: [String: Any]? = nil,
+             encoding: ParameterEncoding = .url, headers: [String: String]? = nil) -> URLRequest? {
     let request = requestWithHeader(url, method: method, headers: headers)
     guard let _request = request else { return nil }
     let encodedRequest = encoding.encode(_request, parameters: parameters)
     return encodedRequest
 }
 
-func requestWithHeader(url: String, method: Method, headers: [String: String]? = nil) -> NSMutableURLRequest? {
-    guard let url = NSURL(string: url) else {
+func requestWithHeader(_ url: String, method: Method, headers: [String: String]? = nil) -> URLRequest? {
+    guard let url = URL(string: url) else {
         return nil
     }
-    let mutableRequest = NSMutableURLRequest(URL: url)
-    mutableRequest.HTTPMethod = method.rawValue
+    var request = URLRequest(url: url)
+    request.httpMethod = method.rawValue
     
     if let headers = headers {
         for (headerField, headerValue) in headers {
-            mutableRequest.setValue(headerValue, forHTTPHeaderField: headerField)
+            request.setValue(headerValue, forHTTPHeaderField: headerField)
         }
     }
     
-    return mutableRequest
+    return request
 }

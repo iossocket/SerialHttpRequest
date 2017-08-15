@@ -10,42 +10,43 @@ import UIKit
 
 class APIManager {
     
-    var tasks: Queue<NSURLSessionTask>
-    var session: NSURLSession
-    var queue: NSOperationQueue
-    var currentTask: NSURLSessionTask?
+    var tasks: Queue<URLSessionTask>
+    var session: URLSession
+    var queue: OperationQueue
+    var currentTask: URLSessionTask?
     
     init() {
-        tasks = Queue<NSURLSessionTask>()
-        queue = NSOperationQueue()
+        tasks = Queue<URLSessionTask>()
+        queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: config, delegate: nil, delegateQueue: queue)
+        let config = URLSessionConfiguration.default
+        session = URLSession(configuration: config, delegate: nil, delegateQueue: queue)
     }
     
     deinit {
         session.finishTasksAndInvalidate()
     }
     
-    func addTask(url: String, method: Method, parameters: [String: AnyObject], encoding: ParameterEncoding = .URL, header: [String: String]? = nil, response: (data: NSData?, resp: NSURLResponse?, error: NSError?) -> Void) {
+    func addTask(_ url: String, method: Method, parameters: [String: AnyObject], encoding: ParameterEncoding = .url, header: [String: String]? = nil, response: @escaping (_ data: Data?, _ resp: URLResponse?, _ error: Error?) -> Void) {
         let req = request(url, method: method, parameters: parameters, encoding: encoding, headers: header)
         guard let request = req else {
-            response(data: nil, resp: nil, error: NSError(domain: "request create error", code: 422, userInfo: nil))
+            response(nil, nil, NSError(domain: "request create error", code: 422, userInfo: nil))
             return
         }
-        let task = session.dataTaskWithRequest(request) {[weak self] (data, resp, error) in
-            response(data: data, resp: resp, error: error)
+        
+        let task = session.dataTask(with: request, completionHandler: {[weak self] (data, resp, error) in
+            response(data, resp, error)
             self?.resumeTasks()
-        }
+        }) 
         tasks.enqueue(task)
         resumeTasks()
     }
     
-    private func resumeTasks() {
-        queue.addOperationWithBlock { [weak self] in
+    fileprivate func resumeTasks() {
+        queue.addOperation { [weak self] in
             
             if let task = self?.currentTask {
-                if task.state == NSURLSessionTaskState.Running {
+                if task.state == URLSessionTask.State.running {
                     return
                 }
             }

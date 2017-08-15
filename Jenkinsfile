@@ -1,4 +1,4 @@
-node(iOS) {
+node {
     stage('Checkout') {
        checkout scm
     }

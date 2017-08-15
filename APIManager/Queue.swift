@@ -31,7 +31,7 @@ class Queue<T> {
     }
     
     /// Add a new item to the back of the queue.
-    func enqueue(value: Element) {
+    func enqueue(_ value: Element) {
         back.next = QueueItem(value)
         back = back.next!
     }
